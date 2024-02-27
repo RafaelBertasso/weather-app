@@ -1,0 +1,12 @@
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit">
+    <input type="text" placeholder="Buscar Localização" name="city"[(ngModel)] = "initialCityName">
+
+    <span (click)="onSubmit()">
+      <fa-icon animation="fade" style="--fa-animated-duration: 5s; cursor: pointer;" size="lg" class="search-icon" [icon]="searchIcon"></fa-icon>
+    </span>
+  </form>
+</div>
+
+<!-- *ngIf ->  o componente só vai ser renderizado se houverem dados no componente weatherDatas -->
+<app-weather-card *ngIf="weatherDatas" [WeatherDatasInput]="weatherDatas"></app-weather-card>
